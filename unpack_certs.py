@@ -22,16 +22,6 @@ class CertUnpacker:
     REMOTE_ARCHIVE = 'http://www2.fdic.gov/idasp/Institutions2.zip'
 
     @classmethod
-    def _get_file(cls, file_name):
-        return os.path.join(
-            os.path.abspath(
-                inspect.getfile(inspect.currentframe())
-                ),
-            '..',
-            file_name
-            )
-
-    @classmethod
     def _unpack_zip(cls):
         if not os.path.exists(CertUnpacker.ARCHIVE_FILE):
             CertUnpacker._download_archive()
