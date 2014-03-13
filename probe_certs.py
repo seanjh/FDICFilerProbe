@@ -170,7 +170,7 @@ def probe(args):
 
     if rd:
         do_output(rd)
-        print()
+        print("")
         print("Finished FDIC.gov probe. Results written to %s" % 
             RESULTS_FILE_NAME
             )

@@ -55,7 +55,7 @@ class CertUnpacker:
     def get_dict(self):
         return [company.get_dict() for company in self.companies]
 
-    def write_json(self, file_name='fdic_certs.json'):
+    def write_json(self, file_name=OUTPUT_FILE):
         if (CertUnpacker._need_update()):
             with open(file_name, 'w') as outfile:
                 for company in self.get_dict():
