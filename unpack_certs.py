@@ -15,8 +15,9 @@ def make_abs_filename(file_name):
             )
 
 class CertUnpacker:
+
     ARCHIVE_FILE = make_abs_filename('Institutions2.zip')
-    DATA_FILE = make_abs_filename('INSTITUTIONS2.CSV')
+    DATA_FILE = 'INSTITUTIONS2.CSV'
     OUTPUT_FILE = make_abs_filename('fdic_certs.json')
     REMOTE_ARCHIVE = 'http://www2.fdic.gov/idasp/Institutions2.zip'
 
@@ -34,7 +35,7 @@ class CertUnpacker:
     def _unpack_zip(cls):
         if not os.path.exists(CertUnpacker.ARCHIVE_FILE):
             CertUnpacker._download_archive()
-        return ZipFile(abs_file_name, 'r')
+        return ZipFile(CertUnpacker.ARCHIVE_FILE, 'r')
 
     @classmethod
     def _need_update(cls):
